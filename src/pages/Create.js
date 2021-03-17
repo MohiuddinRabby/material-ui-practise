@@ -1,29 +1,40 @@
-import { Typography } from "@material-ui/core";
 import React from "react";
-
+import { Button, Container, Typography } from "@material-ui/core";
+import AcUnitIcon from "@material-ui/icons/AcUnit";
+import AccessAlarmIcon from "@material-ui/icons/AccessAlarm";
 const Create = () => {
   return (
-    <>
+    <Container>
       <Typography
         variant="h4"
         component="h2"
-        align="center"
+        // align="center"
         color="primary"
         gutterBottom
       >
         Create Page
       </Typography>
       <Typography
-        noWrap
         variant="subtitle1"
-        align="center"
+        // align="center"
         gutterBottom
         color="textSecondary"
       >
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime dolorem
-        quos hic ex veniam iure officia voluptate modi. Earum, ipsam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+        recusandae tempora nobis delectus veniam natus provident. Eos
+        voluptatibus animi quos quaerat laborum fugit praesentium. Culpa
+        incidunt architecto corrupti eos adipisci.
       </Typography>
-    </>
+      <Button
+        variant="contained"
+        color="primary"
+        size="small"
+        startIcon={<AcUnitIcon />}
+        endIcon={<AccessAlarmIcon />}
+      >
+        Submit
+      </Button>
+    </Container>
   );
 };
 
