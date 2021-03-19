@@ -3,19 +3,8 @@ import { Button, Container, Typography } from "@material-ui/core";
 import AcUnitIcon from "@material-ui/icons/AcUnit";
 import AccessAlarmIcon from "@material-ui/icons/AccessAlarm";
 import { makeStyles } from "@material-ui/core";
-  const useStyles = makeStyles({
-    btn: {
-      background: "#4d88ff",
-      "&:hover": {
-        background: "#3377ff",
-      },
-    },
-    paraText: {
-      color: "#3377ff",
-    },
-  });
+const useStyles = makeStyles({});
 const Create = () => {
-
   const classes = useStyles();
   return (
     <Container>
@@ -36,7 +25,7 @@ const Create = () => {
       </Typography>
       <Button
         className={classes.btn}
-        color="primary"
+        color="secondary"
         variant="contained"
         size="small"
         startIcon={<AcUnitIcon />}
