@@ -1,10 +1,21 @@
 import React from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import { Button, Container, makeStyles, TextField } from "@material-ui/core";
+import {
+  Button,
+  Container,
+  FormControlLabel,
+  makeStyles,
+  Radio,
+  RadioGroup,
+  TextField,
+} from "@material-ui/core";
 const validationSchema = Yup.object().shape({
   title: Yup.string().required("Required"),
   details: Yup.string().required("Required"),
+  category: Yup.string()
+    .oneOf(["male", "female", "other"])
+    .required("Required"),
 });
 const useStyles = makeStyles({
   tField: {
@@ -21,6 +32,7 @@ const useStyles = makeStyles({
 const initialValues = {
   title: "",
   details: "",
+  category: "",
 };
 
 const Create = () => {
@@ -68,6 +80,24 @@ const Create = () => {
           </div>
           <div className={classes.requiredMsgColor}>
             <ErrorMessage name="details" />
+          </div>
+          <div>
+            <Field as={RadioGroup} name="category">
+              <FormControlLabel
+                value="female"
+                control={<Radio />}
+                label="Female"
+              />
+              <FormControlLabel value="male" control={<Radio />} label="Male" />
+              <FormControlLabel
+                value="other"
+                control={<Radio />}
+                label="Other"
+              />
+            </Field>
+          </div>
+          <div className={classes.requiredMsgColor}>
+            <ErrorMessage name="category" />
           </div>
           <div>
             <Button
