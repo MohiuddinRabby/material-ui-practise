@@ -11,6 +11,7 @@ import {
   RadioGroup,
   TextField,
 } from "@material-ui/core";
+import { saveNotes } from "../Api/Api";
 const validationSchema = Yup.object().shape({
   title: Yup.string().required("Required"),
   details: Yup.string().required("Required"),
@@ -43,7 +44,12 @@ const Create = () => {
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={(values, { setSubmitting, resetForm }) => {
-        console.log(values);
+        const newData = {
+          title: values.title,
+          details: values.details,
+          category: values.category,
+        };
+        saveNotes(newData);
         resetForm();
       }}
     >
