@@ -5,6 +5,7 @@ import {
   Button,
   Container,
   FormControlLabel,
+  FormLabel,
   makeStyles,
   Radio,
   RadioGroup,
@@ -14,7 +15,7 @@ const validationSchema = Yup.object().shape({
   title: Yup.string().required("Required"),
   details: Yup.string().required("Required"),
   category: Yup.string()
-    .oneOf(["male", "female", "other"])
+    .oneOf(["Todo", "Work", "Remainder"])
     .required("Required"),
 });
 const useStyles = makeStyles({
@@ -82,18 +83,15 @@ const Create = () => {
             <ErrorMessage name="details" />
           </div>
           <div>
+            <FormLabel>Category</FormLabel>
             <Field as={RadioGroup} name="category">
+              <FormControlLabel value="Todo" control={<Radio />} label="Todo" />
               <FormControlLabel
-                value="female"
+                value="Remainder"
                 control={<Radio />}
-                label="Female"
+                label="Remainder"
               />
-              <FormControlLabel value="male" control={<Radio />} label="Male" />
-              <FormControlLabel
-                value="other"
-                control={<Radio />}
-                label="Other"
-              />
+              <FormControlLabel value="Work" control={<Radio />} label="Work" />
             </Field>
           </div>
           <div className={classes.requiredMsgColor}>
