@@ -21,3 +21,13 @@ export const getNotes = async (setter) => {
     console.log(error.message);
   }
 };
+export const deleteNotes = async (id) => {
+  try {
+    const res = await axios.delete(`http://localhost:8000/note/${id}`);
+    if (res.status === 200) {
+      alert("Blog deleted from DB");
+    }
+  } catch (error) {
+    console.log(error.message);
+  }
+};

@@ -8,12 +8,13 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
-const NoteCard = ({ note }) => {
+
+const NoteCard = ({ note, deleteNote }) => {
   return (
     <Card elevation={3}>
       <CardHeader
         action={
-          <IconButton aria-label="settings">
+          <IconButton aria-label="settings" onClick={()=>deleteNote(note?.id)}>
             <DeleteIcon />
           </IconButton>
         }
