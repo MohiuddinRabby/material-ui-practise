@@ -4,7 +4,7 @@ import { deleteNotes, getNotes } from "../Api/Api";
 import NoteCard from "./NoteCard";
 const useStyles = makeStyles({
   cardMarginTop: {
-    marginTop: "10px",
+    marginTop: "50px",
   },
 });
 const Notes = () => {

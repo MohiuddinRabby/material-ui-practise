@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Card,
   CardContent,
   CardHeader,
@@ -13,8 +14,12 @@ const NoteCard = ({ note, deleteNote }) => {
   return (
     <Card elevation={3}>
       <CardHeader
+        avatar={<Avatar>{note.category[0].toUpperCase()}</Avatar>}
         action={
-          <IconButton aria-label="settings" onClick={()=>deleteNote(note?.id)}>
+          <IconButton
+            aria-label="settings"
+            onClick={() => deleteNote(note?.id)}
+          >
             <DeleteIcon />
           </IconButton>
         }
