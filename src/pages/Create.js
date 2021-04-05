@@ -30,6 +30,9 @@ const useStyles = makeStyles({
   requiredMsgColor: {
     color: "#d50000",
   },
+  formStyle: {
+    marginTop: "50px",
+  },
 });
 const initialValues = {
   title: "",
@@ -54,7 +57,7 @@ const Create = () => {
       }}
     >
       <Container>
-        <Form>
+        <Form className={classes.formStyle}>
           <div>
             <Field
               name="title"
